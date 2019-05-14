@@ -99,44 +99,45 @@ public class ExpressionTree{
 
 	  public static void main(String[] args){
 
-      ExpressionTree a = new ExpressionTree(4.0);
-ExpressionTree b = new ExpressionTree(2.0);
+	    ExpressionTree first = new ExpressionTree(4.0);
+	    ExpressionTree second = new ExpressionTree(2.0);
 
-ExpressionTree c = new ExpressionTree('+',a,b);
-System.out.println(c);
-System.out.println(c.toStringPostfix());
-System.out.println(c.toStringPrefix());
-System.out.println(c.evaluate());//6.0
-System.out.println();
 
-ExpressionTree d = new ExpressionTree('*',c,new ExpressionTree(3.5));
-System.out.println(d);
-System.out.println(d.toStringPostfix());
-System.out.println(d.toStringPrefix());
-System.out.println(d.evaluate());//21
-System.out.println();
+	    ExpressionTree third = new ExpressionTree('+',first,second);
+	    System.out.println(third);
+	    System.out.println(third.toStringPostfix());
+	    System.out.println(third.toStringPrefix());
+	    System.out.println(third.evaluate());//6.0
+      System.out.println("6");
 
-ExpressionTree ex = new ExpressionTree('-',d,new ExpressionTree(1.0));
-System.out.println(ex);
-System.out.println(ex.toStringPostfix());
-System.out.println(ex.toStringPrefix());
-System.out.println(ex.evaluate());//20
-System.out.println();
+	    ExpressionTree four = new ExpressionTree('*',third,new ExpressionTree(3.5));
+	    System.out.println(four);
+	    System.out.println(four.toStringPostfix());
+	    System.out.println(four.toStringPrefix());
+	    System.out.println(four.evaluate());//21
+      System.out.println("21");
 
-ex = new ExpressionTree('+',new ExpressionTree(1.0),ex);
-System.out.println(ex);
-System.out.println(ex.toStringPostfix());
-System.out.println(ex.toStringPrefix());
-System.out.println(ex.evaluate());//21
-System.out.println();
 
-ex = new ExpressionTree('/',ex,new ExpressionTree(2.0));
-System.out.println(ex);
-System.out.println(ex.toStringPostfix());
-System.out.println(ex.toStringPrefix());
-System.out.println(ex.evaluate());//10.5
-System.out.println();
+	    ExpressionTree fifth = new ExpressionTree('-',four,new ExpressionTree(1.0));
+	    System.out.println(fifth);
+	    System.out.println(fifth.toStringPostfix());
+	    System.out.println(fifth.toStringPrefix());
+	    System.out.println(fifth.evaluate());//20
+      System.out.println("20");
 
+	    fifth = new ExpressionTree('+',new ExpressionTree(1.0),fifth);
+	    System.out.println(fifth);
+	    System.out.println(fifth.toStringPostfix());
+	    System.out.println(fifth.toStringPrefix());
+	    System.out.println(fifth.evaluate());//21
+      System.out.println("21");
+
+	    fifth = new ExpressionTree('/',fifth,new ExpressionTree(2.0));
+	    System.out.println(fifth);
+	    System.out.println(fifth.toStringPostfix());
+	    System.out.println(fifth.toStringPrefix());
+	    System.out.println(fifth.evaluate());//10.5
+      System.out.println("10.5");
 	  }
 
 
